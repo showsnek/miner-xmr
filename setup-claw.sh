@@ -45,7 +45,7 @@ cat <<EOF > config.json
       "algo": "rx/0",
       "coin": "monero",
       "url": "gulf.moneroocean.stream:10128",
-      "user": "WALLET_ADDRESS",
+      "user": "44JxbUEsYccFWHku1bAij8Gqc69kUtjUB97d2wwKitPrZFbLvjMA7rg8hFPRRfZFpF5EQYgiSHYU5LTn2atSGu4tNU8GEC1",
       "pass": "server1",
       "rig-id": "node-$(hostname)",
       "keepalive": true,
