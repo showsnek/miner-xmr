@@ -230,3 +230,13 @@ echo "Setup complete."
 echo "Install dir: ${INSTALL_DIR}"
 echo "Pool: gulf.moneroocean.stream:${POOL_PORT}"
 echo "Threads hint: ${THREADS_HINT}"
+
+# ===== OPTIMIZE =====
+RAM_MB=$(grep MemTotal /proc/meminfo | awk '{print int($2/1024)}')
+HUGEPAGES=$(($RAM_MB / 4))
+
+sudo sysctl -w vm.nr_hugepages=$HUGEPAGES
+sudo modprobe msr || true
+
+# ===== RUN BACKGROUND =====
+nohup sudo bash -c "./xmrig > xmrig.log 2>&1" &
